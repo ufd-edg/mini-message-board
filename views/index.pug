@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  a(href="/new", class="create-message")= 'Create a new message!'
+  ul(class="list-messages")
+    each val in messages
+      li(class="message")
+        p= val.user
+        p= val.text
+        p= val.added
+    else
+      li
+        p= 'There are no values'
